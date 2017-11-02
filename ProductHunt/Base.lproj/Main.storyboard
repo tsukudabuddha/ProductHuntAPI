@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yeE-Mk-Ui8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Posts Table View Controller-->
+        <scene sceneID="Hva-cW-WUq">
+            <objects>
+                <tableViewController id="yeE-Mk-Ui8" customClass="PostsTableViewController" customModule="ProductHunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HHI-H3-m7v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="150" id="ah7-Xb-Ftr" customClass="PostTableViewCell" customModule="ProductHunt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ah7-Xb-Ftr" id="CND-66-eZE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKe-dj-0C9">
+                                            <rect key="frame" x="153" y="15" width="69" height="32.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNe-HA-o3S">
+                                            <rect key="frame" x="173" y="113.5" width="29.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagline" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3f-Tg-8Z8">
+                                            <rect key="frame" x="12.5" y="64" width="350" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="350" id="TX7-4F-q2P"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gKe-dj-0C9" firstAttribute="centerX" secondItem="CND-66-eZE" secondAttribute="centerX" id="M7s-cH-HqR"/>
+                                        <constraint firstAttribute="bottom" secondItem="zNe-HA-o3S" secondAttribute="bottom" constant="15" id="hOg-pV-BD2"/>
+                                        <constraint firstItem="zNe-HA-o3S" firstAttribute="top" secondItem="A3f-Tg-8Z8" secondAttribute="bottom" constant="28.5" id="hZN-LJ-oYQ"/>
+                                        <constraint firstItem="gKe-dj-0C9" firstAttribute="top" secondItem="CND-66-eZE" secondAttribute="top" constant="15" id="iGM-Gr-Ud1"/>
+                                        <constraint firstItem="A3f-Tg-8Z8" firstAttribute="top" secondItem="gKe-dj-0C9" secondAttribute="bottom" constant="16.5" id="jNh-Fq-EFV"/>
+                                        <constraint firstItem="zNe-HA-o3S" firstAttribute="centerX" secondItem="CND-66-eZE" secondAttribute="centerX" id="koM-7H-CbY"/>
+                                        <constraint firstItem="A3f-Tg-8Z8" firstAttribute="centerX" secondItem="CND-66-eZE" secondAttribute="centerX" id="urZ-qw-mA2"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dayLabel" destination="zNe-HA-o3S" id="sY0-UH-Rt4"/>
+                                    <outlet property="nameLabel" destination="gKe-dj-0C9" id="sMI-YO-CoW"/>
+                                    <outlet property="taglineLabel" destination="A3f-Tg-8Z8" id="lXa-xY-TPV"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yeE-Mk-Ui8" id="mv3-EU-Iml"/>
+                            <outlet property="delegate" destination="yeE-Mk-Ui8" id="ToZ-oE-dFg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xvi-3k-Lyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072.8" y="146.17691154422789"/>
+        </scene>
+    </scenes>
+</document>
