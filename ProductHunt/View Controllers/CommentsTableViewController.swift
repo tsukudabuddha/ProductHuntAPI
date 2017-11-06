@@ -1,34 +1,23 @@
 //
-//  PostsTableViewController.swift
+//  CommentsTableViewController.swift
 //  ProductHunt
 //
-//  Created by Andrew Tsukuda on 11/1/17.
+//  Created by Andrew Tsukuda on 11/5/17.
 //  Copyright © 2017 Andrew Tsukuda. All rights reserved.
 //
 
 import UIKit
 
-class PostsTableViewController: UITableViewController {
-    
-    var posts: [Post] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
+class CommentsTableViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 150
-        
-        
-        let network = Networking()
-        network.getPosts() { (res) in
-            self.posts = res
-        }
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,21 +25,27 @@ class PostsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return posts.count
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
+
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        cell.nameLabel.text = posts[indexPath.row].name
-        cell.taglineLabel.text = posts[indexPath.row].tagline
-        cell.dayLabel.text = posts[indexPath.row].day
 
         return cell
     }
+    */
 
     /*
     // Override to support conditional editing of the table view.

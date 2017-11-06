@@ -1,19 +1,15 @@
 //
-//  PostTableViewCell.swift
+//  CommentsTableViewCell.swift
 //  ProductHunt
 //
-//  Created by Andrew Tsukuda on 11/1/17.
+//  Created by Andrew Tsukuda on 11/5/17.
 //  Copyright © 2017 Andrew Tsukuda. All rights reserved.
 //
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell {
+class CommentsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var taglineLabel: UILabel!
-    @IBOutlet weak var dayLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
