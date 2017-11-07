@@ -13,12 +13,14 @@ struct Post {
     let tagline: String
     let day: String
     let commentCount: Int
+    let id: Int
     
-    init(name: String, tagline: String, day: String, commentCount: Int) {
+    init(name: String, tagline: String, day: String, commentCount: Int, id: Int) {
         self.name = name
         self.tagline = tagline
         self.day = day
         self.commentCount = commentCount
+        self.id = id
     }
 }
 
@@ -32,6 +34,7 @@ extension Post: Decodable {
         case tagline
         case day
         case commentCount = "comments_count"
+        case id
     }
     
     init(from decoder: Decoder) throws {
@@ -41,7 +44,8 @@ extension Post: Decodable {
         let tagline = try container.decodeIfPresent(String.self, forKey: .tagline) ?? "No tagline"
         let day = try container.decodeIfPresent(String.self, forKey: .day) ?? "No date"
         let commentCount = try container.decodeIfPresent(Int.self, forKey: .commentCount) ?? 9999
+        let id = try container.decodeIfPresent(Int.self, forKey: .id) ?? -71798
         
-        self.init(name: name, tagline: tagline, day: day, commentCount: commentCount)
+        self.init(name: name, tagline: tagline, day: day, commentCount: commentCount, id: id)
     }
 }

@@ -54,10 +54,16 @@ class PostsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+        let post = posts[indexPath.row]
         
         // Set up cell
-        
+        let commentVC = CommentsTableViewController()
+        performSegue(withIdentifier: "toComments", sender: "\(post.id)")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! CommentsTableViewController
+        destination.id = sender as? String
     }
 
     /*

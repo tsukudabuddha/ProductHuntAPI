@@ -26,7 +26,7 @@ enum HTTPMethod: String {
 
 enum Resource {
     case posts
-    case comments
+    case comments(id: String)
     
     func httpMethod() -> HTTPMethod {
         switch self {
@@ -44,36 +44,64 @@ enum Resource {
                     "Host": "api.producthunt.com"]
         }
     }
+    
+    func path() -> String {
+        switch self {
+        case .posts:
+            return "/me/feed"
+        case .comments(let id):
+            return "/posts/\(id)/comments"
+        }
+    }
 }
 
 class Networking {
     let session = URLSession.shared
-    let productHuntUrl = URL(string: "https://api.producthunt.com/v1/me/feed")!
+    let baseUrl = "https://api.producthunt.com/v1"
     
-    var posts: [Post] = []
-    
-    func getPosts(completion: @escaping ([Post]) -> Void) {
-        
-        var request = URLRequest(url: productHuntUrl)
+    func getPosts(resource: Resource, completion: @escaping ([Post]) -> Void) {
+        let fullPath = baseUrl + resource.path()
+        let url = URL(string: fullPath)!
+        var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.allHTTPHeaderFields = ["Authorization" : "Bearer 77f734273eb7e4b409a3e61aa1827fad91d1e3504e00ec8dac285262ed44f19b",
-                                       "Accept": "application/json",
-                                       "Content-Type": "application/json",
-                                       "Host": "api.producthunt.com"]
+        request.allHTTPHeaderFields = resource.httpHeader()
         
         session.dataTask(with: request) { (data, resp, err) in
             if let data = data {
+                
                 let postContainer = try? JSONDecoder().decode(PostContainer.self, from: data)
                 
                 if let posts = postContainer?.posts {
                     completion(posts)
-                    self.posts = posts
                 } else {
-                    print("Response: \(String(describing: resp))")
+                    print("Post Response: \(String(describing: resp))")
                 }
                 
             }
         }.resume()
     
+    }
+    
+    func getComments(resource: Resource, completion: @escaping ([Comment]) -> Void) {
+        let fullPath = baseUrl + resource.path()
+        let url = URL(string: fullPath)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = resource.httpHeader()
+        
+        session.dataTask(with: request) { (data, resp, err) in
+            if let data = data {
+                
+                let commentContainer = try? JSONDecoder().decode(CommentContainer.self, from: data)
+                // TODO: THis is the area working on rn fix this shit bro
+                if let comments = commentContainer?.comments {
+                    completion(comments)
+                } else {
+                    print("Comment Response: \(String(describing: resp))")
+                }
+                
+            }
+            }.resume()
+        
     }
 }

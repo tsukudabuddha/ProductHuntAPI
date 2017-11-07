@@ -7,26 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492B88151FB0194F00FA5E84 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B88141FB0194E00FA5E84 /* CommentsTableViewCell.swift */; };
+		492B88171FB019E000FA5E84 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B88161FB019E000FA5E84 /* CommentsTableViewController.swift */; };
 		4932D6991FAA425F0044917E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932D6981FAA425F0044917E /* Post.swift */; };
 		499A0B4D1FA7EA60008B6FB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A0B4C1FA7EA60008B6FB3 /* AppDelegate.swift */; };
-		499A0B4F1FA7EA60008B6FB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499A0B4E1FA7EA60008B6FB3 /* ViewController.swift */; };
 		499A0B521FA7EA60008B6FB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499A0B501FA7EA60008B6FB3 /* Main.storyboard */; };
 		499A0B541FA7EA60008B6FB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499A0B531FA7EA60008B6FB3 /* Assets.xcassets */; };
 		499A0B571FA7EA60008B6FB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499A0B551FA7EA60008B6FB3 /* LaunchScreen.storyboard */; };
+		49C74F2E1FB02A9D00178E05 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C74F2D1FB02A9D00178E05 /* Comment.swift */; };
 		49EE801F1FAA7D8000306FAE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE801E1FAA7D8000306FAE /* Networking.swift */; };
 		49EE80211FAA8ABA00306FAE /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE80201FAA8ABA00306FAE /* PostsTableViewController.swift */; };
 		49EE80231FAA8CBB00306FAE /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE80221FAA8CBB00306FAE /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		492B88141FB0194E00FA5E84 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		492B88161FB019E000FA5E84 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		4932D6981FAA425F0044917E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		499A0B491FA7EA60008B6FB3 /* ProductHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		499A0B4C1FA7EA60008B6FB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		499A0B4E1FA7EA60008B6FB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		499A0B511FA7EA60008B6FB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		499A0B531FA7EA60008B6FB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		499A0B561FA7EA60008B6FB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		499A0B581FA7EA60008B6FB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49C74F2D1FB02A9D00178E05 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		49EE801E1FAA7D8000306FAE /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		49EE80201FAA8ABA00306FAE /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		49EE80221FAA8CBB00306FAE /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
@@ -43,6 +47,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492B88181FB019F500FA5E84 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49EE80201FAA8ABA00306FAE /* PostsTableViewController.swift */,
+				492B88161FB019E000FA5E84 /* CommentsTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		492B88191FB01A0E00FA5E84 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				49EE80221FAA8CBB00306FAE /* PostTableViewCell.swift */,
+				492B88141FB0194E00FA5E84 /* CommentsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		499A0B401FA7EA60008B6FB3 = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +85,12 @@
 			isa = PBXGroup;
 			children = (
 				499A0B4C1FA7EA60008B6FB3 /* AppDelegate.swift */,
-				499A0B4E1FA7EA60008B6FB3 /* ViewController.swift */,
-				49EE80201FAA8ABA00306FAE /* PostsTableViewController.swift */,
 				49EE801E1FAA7D8000306FAE /* Networking.swift */,
 				4932D6981FAA425F0044917E /* Post.swift */,
+				49C74F2D1FB02A9D00178E05 /* Comment.swift */,
+				492B88191FB01A0E00FA5E84 /* Cells */,
+				492B88181FB019F500FA5E84 /* View Controllers */,
 				499A0B501FA7EA60008B6FB3 /* Main.storyboard */,
-				49EE80221FAA8CBB00306FAE /* PostTableViewCell.swift */,
 				499A0B531FA7EA60008B6FB3 /* Assets.xcassets */,
 				499A0B551FA7EA60008B6FB3 /* LaunchScreen.storyboard */,
 				499A0B581FA7EA60008B6FB3 /* Info.plist */,
@@ -148,8 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492B88171FB019E000FA5E84 /* CommentsTableViewController.swift in Sources */,
 				4932D6991FAA425F0044917E /* Post.swift in Sources */,
-				499A0B4F1FA7EA60008B6FB3 /* ViewController.swift in Sources */,
+				492B88151FB0194F00FA5E84 /* CommentsTableViewCell.swift in Sources */,
+				49C74F2E1FB02A9D00178E05 /* Comment.swift in Sources */,
 				499A0B4D1FA7EA60008B6FB3 /* AppDelegate.swift in Sources */,
 				49EE801F1FAA7D8000306FAE /* Networking.swift in Sources */,
 				49EE80211FAA8ABA00306FAE /* PostsTableViewController.swift in Sources */,
